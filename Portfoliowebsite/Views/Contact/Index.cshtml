@@ -9,26 +9,26 @@
     @Html.AntiForgeryToken()
     <div class="hp">
         <label asp-for="MiddleName">Laat dit veld leeg</label>
-        <input asp-for="MiddleName" name="MiddleName" type="text" value="" />
+        <input asp-for="MiddleName" type="text" value="" />
     </div>
     <div>
         <label asp-for="Name"></label>
-        <input asp-for="Name" name="Name" placeholder="Naam" />
+        <input asp-for="Name" placeholder="Naam" />
         <span asp-validation-for="Name" class="error"></span>
     </div>
     <div>
         <label asp-for="Email"></label>
-        <input asp-for="Email" name="Email" placeholder="naam@domein.nl" />
+        <input asp-for="Email" placeholder="naam@domein.nl" />
         <span asp-validation-for="Email" class="error"></span>
     </div>
     <div>
         <label asp-for="Subject"></label>
-        <input asp-for="Subject" name="Subject" placeholder="Onderwerp" />
+        <input asp-for="Subject" placeholder="Onderwerp" />
         <span asp-validation-for="Subject" class="error"></span>
     </div>
     <div>
-        <label asp-for="Message" aria-hidden="true"></label> 
-        <textarea asp-for="Message" name="Message" rows="5" placeholder="Je bericht"></textarea>
+        <label asp-for="Message"></label> 
+        <textarea asp-for="Message" rows="5" placeholder="Je bericht"></textarea>
         <span asp-validation-for="Message" class="error"></span>
     </div>
     <div id="liveStatus"></div>
