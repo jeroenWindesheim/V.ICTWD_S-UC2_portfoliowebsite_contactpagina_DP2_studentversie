@@ -1,4 +1,5 @@
-﻿@{
+﻿@model ContactFormModel
+@{
     ViewData["Title"] = "Contact";
 }
 
@@ -7,29 +8,29 @@
 <form id="contactForm" asp-action="Index" method="post" novalidate>
     @Html.AntiForgeryToken()
     <div class="hp">
-        <label for="website">Laat dit veld leeg</label>
-        <input type="text" id="website" name="website" value="" />
+        <label asp-for="MiddleName">Laat dit veld leeg</label>
+        <input asp-for="MiddleName" name="MiddleName" type="text" value="" />
     </div>
     <div>
-        <input id="Name" name="Name" placeholder="Naam" tabindex="-1" />
-        <div id="nameErr" class="error"></div>
+        <label asp-for="Name"></label>
+        <input asp-for="Name" name="Name" placeholder="Naam" />
+        <span asp-validation-for="Name" class="error"></span>
     </div>
     <div>
-        <label for="EmailX">E-mail</label>
-        <input id="Email" name="Email" placeholder="naam@domein.nl" />
-        <div id="emailErr" class="error"></div>
+        <label asp-for="Email"></label>
+        <input asp-for="Email" name="Email" placeholder="naam@domein.nl" />
+        <span asp-validation-for="Email" class="error"></span>
     </div>
     <div>
-        <label for="Subject">Onderwerp</label>
-        <input id="Subject" name="Subject" placeholder="Onderwerp" />
+        <label asp-for="Subject"></label>
+        <input asp-for="Subject" name="Subject" placeholder="Onderwerp" />
+        <span asp-validation-for="Subject" class="error"></span>
     </div>
     <div>
-        <label for="Message" aria-hidden="true">Bericht</label> 
-        <textarea id="Message" name="Message" rows="5" placeholder="Je bericht"></textarea>
-        <div id="msgErr" class="error"></div>
+        <label asp-for="Message" aria-hidden="true"></label> 
+        <textarea asp-for="Message" name="Message" rows="5" placeholder="Je bericht"></textarea>
+        <span asp-validation-for="Message" class="error"></span>
     </div>
     <div id="liveStatus"></div>
-    <div class="send-button" role="button" onclick="document.getElementById('contactForm').submit()">
-        Versturen
-    </div>
+    <button type="submit" class="send-button">Versturen</button>
 </form>
